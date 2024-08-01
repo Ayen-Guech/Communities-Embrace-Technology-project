@@ -1,0 +1,6 @@
+1. Home
+2. farmer
+3. Contact
+4. login
+5. products
+6. signup
