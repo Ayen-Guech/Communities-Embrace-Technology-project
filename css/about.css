@@ -1,0 +1,79 @@
+/* ===== Global Theme ===== */
+body {
+    background-color: #f4f7f2; /* soft earthy background */
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== Cards ===== */
+.card-group {
+    margin: 40px;
+    gap: 20px;
+}
+
+.card {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== Icons ===== */
+.card svg {
+    width: 40px;
+    height: 40px;
+    margin: 20px auto 0;
+    color: #2e7d32; /* agriculture green */
+}
+
+/* ===== Card Body ===== */
+.card-body {
+    text-align: center;
+    padding: 25px;
+}
+
+.card-title {
+    color: #1b5e20;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.card-text {
+    color: #4e5d52;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* ===== Footer Buttons ===== */
+.card-footer {
+    background-color: transparent;
+    border-top: none;
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+.btn-primary {
+    background-color: #2e7d32;
+    border: none;
+    border-radius: 25px;
+    padding: 8px 22px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #1b5e20;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .card-group {
+        flex-direction: column;
+        margin: 20px;
+    }
+}

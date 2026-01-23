@@ -660,3 +660,104 @@ cursor: pointer;
    /* Importing Google Font - Montserrat */
 
   
+
+
+
+   /* ===============================
+   AGRITECHSAVERS CLEAN OVERRIDES
+   =============================== */
+
+/* GLOBAL TEXT FIX */
+body {
+  color: #2b2b2b;
+  line-height: 1.6;
+}
+
+/* NAVBAR FIX */
+.navbar {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+}
+
+.navbar-nav .nav-link {
+  color: #1b5e20 !important;
+  font-weight: 600;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #2e7d32 !important;
+}
+
+/* SECTION HEADINGS */
+.carousel-row h2,
+.store-items-col h2,
+.team-title,
+.clients-title {
+  color: #1b5e20;
+  font-weight: 700;
+}
+
+/* CARD FIX (MOST IMPORTANT) */
+.thumb-wrapper {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.thumb-wrapper:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+}
+
+/* CARD TEXT */
+.thumb-content h4 {
+  color: #1b5e20;
+  font-weight: 700;
+}
+
+.thumb-content p,
+.item-price {
+  color: #333333;
+  font-size: 14px;
+}
+
+/* BUTTONS */
+.thumb-content .btn {
+  background: transparent;
+  color: #2e7d32;
+  border: 2px solid #2e7d32;
+  font-weight: 600;
+}
+
+.thumb-content .btn:hover {
+  background: #2e7d32;
+  color: #ffffff;
+}
+
+/* STAR RATING */
+.star-rating i {
+  color: #f9a825;
+}
+
+/* OVERLAY TEXT FIX */
+.overlay {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.home-page-text,
+.home-supporting-text {
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+}
+
+/* MOBILE CLEANUP */
+@media (max-width: 768px) {
+  .thumb-wrapper {
+    margin-bottom: 20px;
+  }
+
+  .home-page-text {
+    font-size: 2rem;
+  }
+}
+
