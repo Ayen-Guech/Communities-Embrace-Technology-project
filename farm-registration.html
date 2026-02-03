@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap & Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <title>Farm Registration | AgriTechSavers</title>
+
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #f4f6f5;
+    }
+    .navbar-brand {
+      font-weight: bold;
+    }
+    .form-container {
+      max-width: 650px;
+      margin: 70px auto;
+      background: #fff;
+      padding: 35px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    .form-title {
+      text-align: center;
+      font-weight: 700;
+      color: #2E7D32;
+      margin-bottom: 10px;
+    }
+    label {
+      font-weight: 600;
+    }
+    .btn-submit {
+      background: #2E7D32;
+      color: #fff;
+      font-weight: 600;
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 30px;
+    }
+    .btn-submit:hover {
+      background: #1B5E20;
+    }
+    #statusMsg {
+      text-align: center;
+      margin-top: 15px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Beautiful Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark shadow"
+     style="background: linear-gradient(90deg, #1B5E20, #2E7D32);">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="images/Ayen.logo.svg" height="40" class="me-2">
+      AgriTechSavers
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="products.html">What We Offer</a></li>
+        <li class="nav-item"><a class="nav-link" href="farmers.html">Farmers</a></li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="farm-registration.html">Register Farm</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Form Container -->
+<div class="form-container">
+  <h2 class="form-title">Farm Registration</h2>
+  <p class="text-center text-muted">Tell us about your farm and how we can support you</p>
+
+  <form id="farmForm" method="POST"
+        action="https://script.google.com/macros/s/AKfycbw3N4VQ2Ay-_ejUKqQIeJnAAeXPM4b5iIoEiRjiO-QAR2CmwjhC8IE-yBdHIq7kUIBMpA/exec">
+
+    <div class="mb-3">
+      <label for="farmerName">Farmer Name</label>
+      <input type="text" class="form-control" name="farmerName" id="farmerName" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="farmName">Farm Name</label>
+      <input type="text" class="form-control" name="farmName" id="farmName" required>
+    </div>
+
+   <div class="mb-3">
+  <label for="farmLocation" class="form-label">Farm Location</label>
+  <select class="form-select" name="farmLocation" id="farmLocation" required>
+    <option value="">Select Farm Location</option>
+    <option>Kakuma Camp – Zone 1</option>
+    <option>Kakuma Camp – Zone 2</option>
+    <option>Kakuma Camp – Zone 3</option>
+    <option>Kakuma Camp – Zone 4</option>
+    <option>Kalobeyei Settlement – Village 1</option>
+    <option>Kalobeyei Settlement – Village 2</option>
+    <option>Kalobeyei Settlement – Village 3</option>
+    <option>Kalobeyei Settlement – Village 4</option>
+    <option>Host Community – Kakuma Town</option>
+    <option>Other (Specify in Support Field)</option>
+  </select>
+</div>
+
+
+    <div class="mb-3">
+      <label for="support">Type of Support Needed</label>
+      <select class="form-select" name="support" id="support" required>
+        <option value="">Select Support</option>
+        <option>Climate-smart farming training</option>
+        <option>Water-efficient irrigation</option>
+        <option>Seeds & planting materials</option>
+        <option>Kitchen/community gardens</option>
+        <option>Market access & linkages</option>
+        <option>Alternative livelihoods</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="notes">Additional Notes</label>
+      <textarea class="form-control" name="notes" id="notes" rows="4"></textarea>
+    </div>
+
+    <button type="submit" class="btn-submit">Submit Farm Registration</button>
+  </form>
+
+  <div id="statusMsg"></div>
+</div>
+
+
+<!-- AJAX Submission Script -->
+<script>
+  const form = document.getElementById('farmForm');
+  const statusMsg = document.getElementById('statusMsg');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    statusMsg.innerHTML = "<span class='text-info'>Sending...</span>";
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form)
+    })
+    .then(response => {
+      statusMsg.innerHTML = "<span class='text-success'>Registration successful! Thank you </span>";
+      form.reset();
+    })
+    .catch(error => {
+      statusMsg.innerHTML = "<span class='text-danger'>Submission failed. Try again.</span>";
+    });
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
