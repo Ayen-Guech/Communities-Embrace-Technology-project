@@ -2,65 +2,99 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/login.css">
-    <title>Sign In/Sign Up Page </title>
 
-    <!-- boxicons -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+<title>Sign In / Sign Up</title>
+
+<link rel="stylesheet" href="css/login.css">
+
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
-    <div class="login-container">
-        <div class="login-form" id="loginForm">
-            <h1>Sign In</h1>
-            <div class="social-icons">
-                <a href="#" class="icon"><i class='bx bxl-google-plus'></i></a>
-                <a href="#" class="icon"><i class='bx bxl-facebook'></i></a>
-                <a href="#" class="icon"><i class='bx bxl-github'></i></a>
-                <a href="#" class="icon"><i class='bx bxl-linkedin'></i></a>
-            </div>
 
-            <div class="form-message-container">
-                <span>Or use your email and password</span>
-            </div>
+<div class="login-container">
 
-            <form>
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
-                <button>Sign In</button>
-                <a href="#">Forgot Your Password?</a>
-            </form>
-            <p>Don't have an account? <a href="#" id="showSignup">Sign Up</a></p>
-        </div>
-        <div class="signup-form hidden" id="signupForm">
-            <h1>Create An Account</h1>
-            <div class="social-icons">
-                <a href="#" class="icon"><i class='bx bxl-google-plus'></i></a>
-                <a href="#" class="icon"><i class='bx bxl-facebook'></i></a>
-                <a href="#" class="icon"><i class='bx bxl-github'></i></a>
-                <a href="#" class="icon"><i class='bx bxl-linkedin'></i></a>
-            </div>
-            <div class="form-message-container">
-                <span>Or use your email for registration</span>
-            </div>
+<!-- LOGIN FORM -->
 
-            <form>
-                <input type="text" placeholder="Name">
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
-                <button>Sign Up</button>
-            </form>
-            <p>Already have an account? <a href="#" id="showLogin">Sign In</a></p>
-        </div>
-    </div>
-    <script src="script.js"></script>
+<div class="login-form" id="loginForm">
+
+<h1>Sign In</h1>
+
+<div class="social-icons">
+<a href="#" class="icon"><i class='bx bxl-google'></i></a>
+<a href="#" class="icon"><i class='bx bxl-facebook'></i></a>
+<a href="#" class="icon"><i class='bx bxl-github'></i></a>
+<a href="#" class="icon"><i class='bx bxl-linkedin'></i></a>
+</div>
+
+<div id="loginPopup" class="popup-container"></div>
+
+<div class="form-message-container">
+<span>Use your name and password</span>
+</div>
+
+<form>
+
+<input type="text" id="loginFirstName" placeholder="First Name">
+<input type="text" id="loginLastName" placeholder="Last Name">
+<input type="password" id="loginPassword" placeholder="Password">
+
+<button type="submit">Sign In</button>
+
+<a href="#">Forgot Your Password?</a>
+
+</form>
+
+<p>Don't have an account? <a href="#" id="showSignup">Sign Up</a></p>
+
+</div>
+
+
+<!-- SIGNUP FORM -->
+
+<div class="signup-form hidden" id="signupForm">
+
+<h1>Create An Account</h1>
+
+<div class="social-icons">
+<a href="#" class="icon"><i class='bx bxl-google'></i></a>
+<a href="#" class="icon"><i class='bx bxl-facebook'></i></a>
+<a href="#" class="icon"><i class='bx bxl-github'></i></a>
+<a href="#" class="icon"><i class='bx bxl-linkedin'></i></a>
+</div>
+
+<div id="signupPopup" class="popup-container"></div>
+
+<div class="form-message-container">
+<span>Register using your name</span>
+</div>
+
+<form>
+
+<input type="text" id="signupFirstName" placeholder="First Name">
+<input type="text" id="signupLastName" placeholder="Last Name">
+<input type="password" id="signupPassword" placeholder="Password">
+
+<button type="submit">Sign Up</button>
+
+</form>
+
+<p>Already have an account? <a href="#" id="showLogin">Sign In</a></p>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
 </body>
-
 </html>

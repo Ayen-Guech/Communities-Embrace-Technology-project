@@ -1,30 +1,11 @@
-/* =========================
-   Google Font
-========================= */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
-/* =========================
-   RESET + BASE
-========================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
-}
-
+/* BASE */
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  min-height: 100vh;
-  background: url("../images/main picture.jpg") no-repeat center center/cover;
+  font-family: 'Montserrat', sans-serif;
+  background: url("../images/main picture.jpg") no-repeat center/cover;
+  position: relative;
 }
 
-/* =========================
-   HERO SECTION
-========================= */
+/* HERO SECTION */
 .farmers-hero {
   position: relative;
   background: url("../images/green-leaves.jpg") center/cover no-repeat;
@@ -38,11 +19,12 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55); /* Dark overlay for readability */
+  background: rgba(0,0,0,0.55);
 }
 
 .farmers-hero .overlay {
   position: relative;
+  z-index: 1;
   text-align: center;
   max-width: 900px;
   padding: 20px;
@@ -62,35 +44,39 @@ body {
   font-weight: 500;
 }
 
-/* =========================
-   SLIDER WRAPPER
-========================= */
+/* SLIDER WRAPPER */
 .slider-wrapper {
+  position: relative;
   overflow: hidden;
   max-width: 1200px;
-  margin: 40px 70px 55px;
+  margin: 40px auto 60px;
+  z-index: 0;
 }
 
-/* =========================
-   FARMER CARD
-========================= */
+.slider-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.2);
+  border-radius: 15px;
+  z-index: 0;
+}
+
+/* FARMER CARD */
 .card-list .card-item {
+  position: relative;
+  z-index: 1;
   height: auto;
   padding: 35px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   text-align: center;
-
-  /* GLASS EFFECT + DARK BACKGROUND FOR READABILITY */
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0,0,0,0.6);
   backdrop-filter: blur(20px);
-
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255,255,255,0.25);
   color: #ffffff;
-  user-select: none;
   transition: transform 0.3s ease;
 }
 
@@ -98,45 +84,33 @@ body {
   transform: translateY(-5px);
 }
 
-/* =========================
-   FARMER IMAGE
-========================= */
-.card-list .card-item .user-image {
+.user-image {
   width: 150px;
   height: 150px;
   border-radius: 50%;
   margin-bottom: 25px;
-  border: 4px solid #7CB342; /* Agriculture green */
+  border: 4px solid #7CB342;
   padding: 4px;
   object-fit: cover;
 }
 
-/* =========================
-   FARMER NAME
-========================= */
-.card-list .card-item .user-name {
+.user-name {
   font-size: 1.4rem;
   font-weight: 700;
-  color: #E8F5E9; /* Soft green-white */
+  color: #E8F5E9;
   margin-bottom: 8px;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
 }
 
-/* =========================
-   FARMER PROFESSION / FARM INFO
-========================= */
-.card-list .card-item .user-profession {
+.user-profession {
   font-size: 1rem;
-  color: #C8E6C9; /* Softer green */
+  color: #C8E6C9;
   font-weight: 500;
   margin: 10px 0 25px;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
-/* =========================
-   TESTIMONIAL
-========================= */
-.card-list .card-item .testimonial {
+.testimonial {
   font-size: 0.95rem;
   font-style: italic;
   color: #e0e0e0;
@@ -144,79 +118,33 @@ body {
   margin-bottom: 20px;
 }
 
-/* =========================
-   MESSAGE / CONTACT BUTTON
-========================= */
-.card-list .card-item a {
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #ffffff;
-  background: #388E3C; /* Green CTA button */
-  padding: 10px 28px;
-  border-radius: 6px;
-  transition: all 0.3s ease;
+/* SLIDER ARROWS */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #7CB342;
 }
 
-.card-list .card-item a:hover {
-  background: #2E7D32;
-  transform: translateY(-2px);
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: #2E7D32;
 }
 
-/* =========================
-   SWIPER PAGINATION
-========================= */
-.slider-wrapper .swiper-pagination-bullet {
+/* PAGINATION */
+.swiper-pagination-bullet {
   background: #ffffff;
-  height: 12px;
-  width: 12px;
   opacity: 0.5;
 }
 
-.slider-wrapper .swiper-pagination-bullet-active {
+.swiper-pagination-bullet-active {
   opacity: 1;
   background: #7CB342;
 }
 
-/* =========================
-   SWIPER ARROWS
-========================= */
-.slider-wrapper .swiper-slide-button {
-  color: #ffffff;
-  transition: 0.2s ease;
-}
-
-.slider-wrapper .swiper-slide-button:hover {
-  color: #7CB342;
-}
-
-/* =========================
-   MOBILE RESPONSIVENESS
-========================= */
+/* MOBILE RESPONSIVENESS */
 @media (max-width: 768px) {
-  .slider-wrapper {
-    margin: 0 15px 40px;
-  }
-
-  .slider-wrapper .swiper-slide-button {
-    display: none;
-  }
-
-  .card-list .card-item {
-    padding: 25px;
-  }
-
-  .farmers-hero h1 {
-    font-size: 2rem;
-  }
-
-  .farmers-hero p {
-    font-size: 1rem;
-  }
-
-  .card-list .card-item .user-image {
-    width: 120px;
-    height: 120px;
-    margin-bottom: 20px;
-  }
+  .slider-wrapper { margin: 0 15px 40px; }
+  .card-list .card-item { padding: 25px; }
+  .farmers-hero h1 { font-size: 2rem; }
+  .farmers-hero p { font-size: 1rem; }
+  .user-image { width: 120px; height: 120px; margin-bottom: 20px; }
 }

@@ -13,93 +13,112 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/farmer.css">
 </head>
 
 <body>
 
-<div class="container swiper my-5">
-
-  <!-- Page Intro -->
-  <div class="text-center mb-4">
-    <h2 class="text-success fw-bold">Our Farmers & Beneficiaries</h2>
-    <p class="text-muted">
-      Farmers from Kakuma Refugee Camp and host communities building food security
-      through climate-smart agriculture.
-    </p>
+<!-- HERO SECTION -->
+<section class="farmers-hero">
+  <div class="overlay text-center">
+    <h1>Our Farmers & Beneficiaries</h1>
+    <p>Farmers from Kakuma Refugee Camp and host communities building food security through climate-smart agriculture.</p>
   </div>
+</section>
 
-  <div class="slider-wrapper">
-    <div class="card-list swiper-wrapper">
+<!-- SLIDER SECTION -->
+<div class="slider-wrapper position-relative">
+  <div class="card-list swiper-wrapper">
 
-      <!-- Farmer 1 -->
-      <div class="card-item swiper-slide">
-        <img src="images/farmer7.jpeg" alt="Farmer Image" class="user-image">
-        <h2 class="user-name">Ms. Naimburu</h2>
-        <p class="user-profession">
-          <strong>Farm:</strong> Green Hope Farm<br>
-          <strong>Location:</strong> Kakuma Town,
-        </p>
-        <p class="testimonial">
-          “AgriTechSavers helped me learn water-saving irrigation. I can now grow vegetables
-          even during drought and feed my children.”
-        </p>
-      </div>
-
-      <!-- Farmer 2 -->
-      <div class="card-item swiper-slide">
-        <img src="images/Farmer6.jpeg" alt="Farmer Image" class="user-image">
-        <h2 class="user-name">John L.</h2>
-        <p class="user-profession">
-          <strong>Farm:</strong> Resilience Garden<br>
-          <strong>Location:</strong> Kalobeyei Settlement
-        </p>
-        <p class="testimonial">
-          “The soil and crop management training increased my harvest despite low rainfall.”
-        </p>
-      </div>
-
-      <!-- Farmer 3 -->
-      <div class="card-item swiper-slide">
-        <img src="images/farmer4.jpeg" alt="Farmer Image" class="user-image">
-        <h2 class="user-name">Amina S.</h2>
-        <p class="user-profession">
-          <strong>Farm:</strong> New Life Farm<br>
-          <strong>Location:</strong> Kakuma 3 Zone 3
-        </p>
-        <p class="testimonial">
-          “I now earn income by selling vegetables locally instead of relying on food aid.”
-        </p>
-      </div>
-
-      <!-- Farmer 4 -->
-      <div class="card-item swiper-slide">
-        <img src="images/farmer8.jpeg" alt="Farmer Image" class="user-image">
-        <h2 class="user-name">Peter M.</h2>
-        <p class="user-profession">
-          <strong>Farm:</strong> Sunrise Farm<br>
-          <strong>Location:</strong> Kakuma 2 Zone 6
-        </p>
-        <p class="testimonial">
-          “Water conservation techniques changed how we farm in this dry region.”
-        </p>
-      </div>
-
+    <!-- Farmer 1 -->
+    <div class="card-item swiper-slide">
+      <img src="images/farmer7.jpeg" alt="Farmer Image" class="user-image">
+      <h2 class="user-name">Ms. Naimburu</h2>
+      <p class="user-profession">
+        <strong>Farm:</strong> Green Hope Farm<br>
+        <strong>Location:</strong> Kakuma Town
+      </p>
+      <p class="testimonial">
+        “AgriTechSavers helped me learn water-saving irrigation. I can now grow vegetables even during drought and feed my children.”
+      </p>
     </div>
 
-    <!-- Slider Controls -->
-    <div class="swiper-pagination"></div>
-    <div class="swiper-slide-button swiper-button-prev"></div>
-    <div class="swiper-slide-button swiper-button-next"></div>
+    <!-- Farmer 2 -->
+    <div class="card-item swiper-slide">
+      <img src="images/Farmer6.jpeg" alt="Farmer Image" class="user-image">
+      <h2 class="user-name">John L.</h2>
+      <p class="user-profession">
+        <strong>Farm:</strong> Resilience Garden<br>
+        <strong>Location:</strong> Kalobeyei Settlement
+      </p>
+      <p class="testimonial">
+        “The soil and crop management training increased my harvest despite low rainfall.”
+      </p>
+    </div>
+
+    <!-- Farmer 3 -->
+    <div class="card-item swiper-slide">
+      <img src="images/farmer4.jpeg" alt="Farmer Image" class="user-image">
+      <h2 class="user-name">Amina S.</h2>
+      <p class="user-profession">
+        <strong>Farm:</strong> New Life Farm<br>
+        <strong>Location:</strong> Kakuma 3 Zone 3
+      </p>
+      <p class="testimonial">
+        “I now earn income by selling vegetables locally instead of relying on food aid.”
+      </p>
+    </div>
+
+    <!-- Farmer 4 -->
+    <div class="card-item swiper-slide">
+      <img src="images/farmer8.jpeg" alt="Farmer Image" class="user-image">
+      <h2 class="user-name">Peter M.</h2>
+      <p class="user-profession">
+        <strong>Farm:</strong> Sunrise Farm<br>
+        <strong>Location:</strong> Kakuma 2 Zone 6
+      </p>
+      <p class="testimonial">
+        “Water conservation techniques changed how we farm in this dry region.”
+      </p>
+    </div>
+
   </div>
 
-  <div class="text-center mt-4">
-    <a class="btn btn-primary" href="index.html">Back Home</a>
-  </div>
+  <!-- Slider Controls -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-pagination"></div>
 </div>
 
+<!-- Back Home Button -->
+<div class="text-center my-4">
+  <a class="btn btn-success" href="index.html">Back Home</a>
+</div>
+
+<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="valid.js"></script>
+<script>
+  const swiper = new Swiper('.slider-wrapper', {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      0: { slidesPerView: 1 },
+      576: { slidesPerView: 1 },
+      768: { slidesPerView: 2 },
+      992: { slidesPerView: 3 }
+    }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

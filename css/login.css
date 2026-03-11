@@ -1,131 +1,172 @@
-/* Global styles */
-* {
-    font-family: "Outfit", sans-serif;
+*{
+font-family:"Outfit",sans-serif;
+box-sizing:border-box;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: url(../images/login\ profile2.jpg) no-repeat;
-    background-size: cover;
-    background-position: center;
+body{
+margin:0;
+padding:0;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+background:url(../images/login\ profile2.jpg) no-repeat;
+background-size:cover;
+background-position:center;
 }
 
-/* Container styles */
-.login-container {
-    width: 380px;
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, .2);
-    backdrop-filter: blur(9px);
-    color: white;
-    border-radius: 14px;
-    padding: 30px 40px;
+.login-container{
+
+width:380px;
+
+background:transparent;
+
+border:2px solid rgba(255,255,255,0.2);
+
+backdrop-filter:blur(10px);
+
+border-radius:14px;
+
+padding:30px 40px;
+
+color:white;
+
 }
 
-/* Heading styles */
-.login-container h1 {
-    font-size: 39px;
-    font-weight: 800;
-    letter-spacing: 0.5px;
-    text-align: center;
+.login-container h1{
+
+text-align:center;
+
+font-size:34px;
+
+margin-bottom:10px;
+
 }
 
-/* Social icons styles */
-.social-icons {
-    text-align: center;
-    margin-bottom: 20px;
+.social-icons{
+
+text-align:center;
+
+margin-bottom:20px;
+
 }
 
-.social-icons .icon {
-    display: inline-block;
-    font-size: 20px;
-    color: white;
-    margin: 0 10px;
-    border: 2px solid rgba(255, 255, 255, .2);
-    border-radius: 16px;
-    padding: 7px 10px;
-    transition: color 0.3s ease;
+.icon{
+
+display:inline-block;
+
+margin:0 10px;
+
+font-size:20px;
+
+color:white;
+
+border:2px solid rgba(255,255,255,0.2);
+
+padding:8px;
+
+border-radius:12px;
+
 }
 
-.social-icons .icon:hover {
-    color: #c2c2c2;
+form{
+
+display:flex;
+
+flex-direction:column;
+
 }
 
+input,button{
 
-form {
-    display: flex;
-    flex-direction: column;
+width:100%;
+
+height:45px;
+
+margin:10px 0;
+
+border-radius:50px;
+
+border:2px solid rgba(255,255,255,0.2);
+
+background:transparent;
+
+color:white;
+
+padding-left:15px;
+
 }
 
-/* Form container styles */
-.form-container {
-    padding: 40px;
-    transition: all 0.3s ease;
+input::placeholder{
+
+color:white;
+
 }
 
-/* Form message container styles */
-.form-message-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 1rem;
+button{
+
+background:#02a152;
+
+border:none;
+
+cursor:pointer;
+
 }
 
-/* Form input and button styles */
-input,
-button {
-    width: 100%;
-    height: 100%;
-    height: 50px;
-    margin: 10px 0;
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, .2);
-    border-radius: 60px;
-    font-size: 15px;
-    color: white;
-    text-indent: 15px;
+button:hover{
+
+background:#028a45;
+
 }
 
-input::placeholder {
-    color: white;
-    text-indent: 15px;
+button:disabled{
+
+opacity:0.6;
+
+cursor:not-allowed;
+
 }
 
-input:focus,
-button:focus {
-    border-color: transparent;
+a{
+
+color:white;
+
+text-align:center;
+
+margin-top:5px;
+
 }
 
-button {
-    background-color: #02a152;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: 0.4s ease ease-in-out;
+.hidden{
+
+display:none;
+
 }
 
-button:hover {
-    background-color: #45a049;
+.popup-container{
+
+width:100%;
+
+text-align:center;
+
+margin-bottom:10px;
+
 }
 
-/* Anchor tag styles */
-a {
-    text-align: center;
-    text-decoration: underline;
-    color: white;
-    transition: 0.4s ease-in-out;
+.popup-message{
+
+display:inline-block;
+
+padding:10px 20px;
+
+background:#4CAF50;
+
+border-radius:6px;
+
 }
 
-a:hover {
-    color: white;
-    text-decoration: none;
-}
+.popup-message.error{
 
-/* Hidden class */
-.hidden {
-    display: none;
+background:#e74c3c;
+
 }
